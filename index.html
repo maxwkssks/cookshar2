@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CookShare — 함께 나누는 요리</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#">
+          <svg width="36" height="36" viewBox="0 0 120 120" aria-label="CookShare Logo" role="img">
+            <circle cx="60" cy="60" r="56" fill="var(--red)"/>
+            <g fill="#FFF">
+              <circle cx="46" cy="50" r="10"/>
+              <circle cx="74" cy="50" r="10"/>
+              <path d="M30 80c0-10 8-18 18-18h24c10 0 18 8 18 18v6H30v-6z"/>
+            </g>
+            <g transform="translate(14,22)" fill="#FFF">
+              <rect x="6" y="16" width="6" height="36" rx="3"/>
+              <rect x="0" y="8" width="4" height="12" rx="2"/>
+              <rect x="6" y="4" width="4" height="16" rx="2"/>
+              <rect x="12" y="8" width="4" height="12" rx="2"/>
+            </g>
+            <g transform="translate(72,16)" fill="#FFF">
+              <path d="M0 38c0-10 14-18 28-18s28 8 28 18H0z"/>
+              <circle cx="28" cy="16" r="5"/>
+            </g>
+          </svg>
+          <span class="brand-name">CookShare</span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="#">홈</a>
+          <a href="#">레시피</a>
+          <a href="#">커뮤니티</a>
+          <a href="#">마이페이지</a>
+        </nav>
+
+        <div class="search">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5 1.5-1.5-5-5zM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="search" placeholder="오늘 뭐 먹지? 레시피 검색" />
+        </div>
+        <button class="btn nav-cta">레시피 올리기</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-wrap">
+        <div class="hero-copy">
+          <span class="badge">🍅 함께 나누는 요리 · CookShare</span>
+          <h1>오늘의 레시피를<br/>모두와 **공유**해요</h1>
+          <p>토마토 레드 & 민트 그린 감성의 따뜻한 커뮤니티. 사진과 동영상을 곁들인 단계별 레시피로 누구나 쉽게 요리해요.</p>
+          <div class="hero-actions">
+            <button class="btn">인기 레시피 보기</button>
+            <button class="btn ghost">카테고리 탐색</button>
+          </div>
+        </div>
+        <div class="hero-media">
+          <svg width="100%" height="100%" viewBox="0 0 800 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0%" stop-color="#fff"/>
+                <stop offset="100%" stop-color="#ffe2e2"/>
+              </linearGradient>
+            </defs>
+            <rect width="800" height="520" fill="url(#g1)"/>
+            <g transform="translate(130,140)" fill="none" stroke="#ff7a7a" stroke-width="6">
+              <rect x="0" y="0" width="540" height="240" rx="20"/>
+              <path d="M70 200c20-60 60-100 100-100s70 40 90 100M340 200c15-40 45-80 80-80s60 40 80 80"/>
+            </g>
+            <g transform="translate(520,70)">
+              <circle cx="42" cy="42" r="42" fill="var(--red)"/>
+              <rect x="30" y="18" width="6" height="30" fill="#fff" rx="3"/>
+              <rect x="24" y="10" width="4" height="10" fill="#fff" rx="2"/>
+              <rect x="30" y="6" width="4" height="14" fill="#fff" rx="2"/>
+              <rect x="36" y="10" width="4" height="10" fill="#fff" rx="2"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 오늘의 인기 레시피 -->
+  <section class="section">
+    <div class="container">
+      <h2>오늘의 인기 레시피</h2>
+      <p class="muted">많이 저장된 레시피를 모았어요.</p>
+
+      <div class="grid">
+        <!-- 카드 6개: <img>로 직접 넣고 cover로 꽉 채움 -->
+        <article class="card">
+          <div class="thumb" aria-label="크림 토마토 파스타 썸네일">
+            <img loading="lazy" decoding="async"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjH5TNCaLgTkzl1cRcBdo-zpsJXENQcAIA_Q&s"
+              alt="크림 토마토 파스타" />
+          </div>
+          <div class="body">
+            <h3>크림 토마토 파스타</h3>
+            <div class="row" style="margin:8px 0">
+              <span class="tag">⏱ 20분</span><span class="tag">난이도 하</span><span class="tag">⭐ 4.8</span>
+            </div>
+            <div class="meta"><span>#파스타</span><span>#간단요리</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb" aria-label="아보카도 샐러드 썸네일">
+            <img loading="lazy" decoding="async"
+              src="https://recipe1.ezmember.co.kr/cache/recipe/2020/02/22/4554f03378f8a997d9a54285322001971.jpg"
+              alt="아보카도 샐러드" />
+          </div>
+          <div class="body">
+            <h3>아보카도 샐러드</h3>
+            <div class="row" style="margin:8px 0">
+              <span class="tag">⏱ 10분</span><span class="tag">난이도 하</span><span class="tag">⭐ 4.6</span>
+            </div>
+            <div class="meta"><span>#비건</span><span>#다이어트</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb" aria-label="갈비찜 썸네일">
+            <img loading="lazy" decoding="async"
+              src="https://recipe1.ezmember.co.kr/cache/recipe/2019/02/09/9377ac695a85566adfda9817b73438f31.jpg"
+              alt="갈비찜" />
+          </div>
+          <div class="body">
+            <h3>갈비찜</h3>
+            <div class="row" style="margin:8px 0">
+              <span class="tag">⏱ 90분</span><span class="tag">난이도 중</span><span class="tag">⭐ 4.9</span>
+            </div>
+            <div class="meta"><span>#한식</span><span>#명절</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb" aria-label="치킨 커틀릿 썸네일">
+            <img loading="lazy" decoding="async"
+              src="https://recipe1.ezmember.co.kr/cache/recipe/2015/11/01/eb3981d22f5ba05a62e02d5e340c9e031.jpg"
+              alt="치킨 커틀릿" />
+          </div>
+          <div class="body">
+            <h3>치킨 커틀릿</h3>
+            <div class="row" style="margin:8px 0">
+              <span class="tag">⏱ 25분</span><span class="tag">난이도 중</span><span class="tag">⭐ 4.7</span>
+            </div>
+            <div class="meta"><span>#에어프라이어</span><span>#바삭</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb" aria-label="딸기 요거트 파르페 썸네일">
+            <img loading="lazy" decoding="async"
+              src="https://img.freepik.com/free-photo/delicious-cream-dessert-with-coconut-truffles-strawberries-wooden-round-serving-board_181624-60551.jpg?semt=ais_hybrid&w=740&q=80"
+              alt="딸기 요거트 파르페" />
+          </div>
+          <div class="body">
+            <h3>딸기 요거트 파르페</h3>
+            <div class="row" style="margin:8px 0">
+              <span class="tag">⏱ 8분</span><span class="tag">난이도 하</span><span class="tag">⭐ 4.5</span>
+            </div>
+            <div class="meta"><span>#디저트</span><span>#홈카페</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb" aria-label="바질 페스토 브루스케타 썸네일">
+            <img loading="lazy" decoding="async"
+              src="https://recipe1.ezmember.co.kr/cache/recipe/2018/08/06/recipe20180806e7e04cf2861ce66ca89f2086b3d10d0b_f.jpg"
+              alt="바질 페스토 브루스케타" />
+          </div>
+          <div class="body">
+            <h3>바질 페스토 브루스케타</h3>
+            <div class="row" style="margin:8px 0">
+              <span class="tag">⏱ 12분</span><span class="tag">난이도 하</span><span class="tag">⭐ 4.6</span>
+            </div>
+            <div class="meta"><span>#에피타이저</span><span>#홈파티</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 카테고리 -->
+  <section class="section">
+    <div class="container">
+      <h2>카테고리별 추천</h2>
+      <p class="muted">한 번에 찾는 나만의 취향.</p>
+      <div class="grid categories">
+        <div class="pill">한식 <span class="arrow">→</span></div>
+        <div class="pill">양식 <span class="arrow">→</span></div>
+        <div class="pill">디저트 <span class="arrow">→</span></div>
+        <div class="pill">비건 <span class="arrow">→</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 커뮤니티 하이라이트 -->
+  <section class="section">
+    <div class="container">
+      <h2>커뮤니티 하이라이트</h2>
+      <div class="community">
+        <div>
+          <h3 style="margin:2px 0 8px">이번 주 요리 챌린지 🍳</h3>
+          <p class="muted">“토마토로 만드는 3가지 요리” — 사진 올리고 배지를 받아보세요.</p>
+          <button class="btn">챌린지 참가</button>
+        </div>
+
+        <!-- 여기도 칸 꽉 채우는 썸네일들 -->
+        <div class="thumbs">
+          <div class="thumb sm">
+            <img loading="lazy" decoding="async"
+              src="https://recipe1.ezmember.co.kr/cache/recipe/2019/02/09/9377ac695a85566adfda9817b73438f31.jpg"
+              alt="갈비찜" />
+          </div>
+          <div class="thumb sm">
+            <img loading="lazy" decoding="async"
+              src="https://recipe1.ezmember.co.kr/cache/recipe/2018/08/06/recipe20180806e7e04cf2861ce66ca89f2086b3d10d0b_f.jpg"
+              alt="브루스케타" />
+          </div>
+          <div class="thumb sm">
+            <img loading="lazy" decoding="async"
+              src="https://recipe1.ezmember.co.kr/cache/recipe/2020/02/22/4554f03378f8a997d9a54285322001971.jpg"
+              alt="아보카도 샐러드" />
+          </div>
+          <div class="thumb sm">
+            <img loading="lazy" decoding="async"
+              src="https://recipe1.ezmember.co.kr/cache/recipe/2015/11/01/eb3981d22f5ba05a62e02d5e340c9e031.jpg"
+              alt="치킨 커틀릿" />
+          </div>
+          <div class="thumb sm">
+            <img loading="lazy" decoding="async"
+              src="https://img.freepik.com/free-photo/delicious-cream-dessert-with-coconut-truffles-strawberries-wooden-round-serving-board_181624-60551.jpg?semt=ais_hybrid&w=740&q=80"
+              alt="딸기 파르페" />
+          </div>
+          <div class="thumb sm">
+            <img loading="lazy" decoding="async"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjH5TNCaLgTkzl1cRcBdo-zpsJXENQcAIA_Q&s"
+              alt="크림 토마토 파스타" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="grid">
+        <div>
+          <strong>CookShare</strong><br/>
+          함께 나누는 요리 커뮤니티
+        </div>
+        <div>
+          <a href="#">이용약관</a><br/>
+          <a href="#">개인정보처리방침</a>
+        </div>
+        <div>
+          <a href="#">Instagram</a><br/>
+          <a href="#">YouTube</a>
+        </div>
+        <div>
+          ⓒ 2025 CookShare
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./script.js" defer></script>
+</body>
+</html>
