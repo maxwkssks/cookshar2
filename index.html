@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" id="top">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
   <header>
     <div class="container">
       <div class="nav">
-        <a class="brand" href="#">
+        <a class="brand" href="#top">
           <svg width="36" height="36" viewBox="0 0 120 120" aria-label="CookShare Logo" role="img">
             <circle cx="60" cy="60" r="56" fill="var(--red)"/>
             <g fill="#FFF">
@@ -42,10 +42,10 @@
         </a>
 
         <nav class="nav-links">
-          <a href="#">홈</a>
-          <a href="#">레시피</a>
-          <a href="#">커뮤니티</a>
-          <a href="#">마이페이지</a>
+          <a href="#top">홈</a>
+          <a href="#recipes">레시피</a>
+          <a href="#community">커뮤니티</a>
+          <a href="#mypage">마이페이지</a>
         </nav>
 
         <div class="search">
@@ -58,20 +58,20 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="container">
       <div class="hero-wrap">
         <div class="hero-copy">
           <span class="badge">🍅 함께 나누는 요리 · CookShare</span>
-          <h1>오늘의 레시피를<br/>모두와 **공유**해요</h1>
+          <h1>오늘의 레시피를<br/>모두와 <strong>공유</strong>해요</h1>
           <p>토마토 레드 & 민트 그린 감성의 따뜻한 커뮤니티. 사진과 동영상을 곁들인 단계별 레시피로 누구나 쉽게 요리해요.</p>
           <div class="hero-actions">
-            <button class="btn">인기 레시피 보기</button>
+            <a class="btn" href="#recipes">인기 레시피 보기</a>
             <button class="btn ghost">카테고리 탐색</button>
           </div>
         </div>
-        <div class="hero-media">
-          <svg width="100%" height="100%" viewBox="0 0 800 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <div class="hero-media" aria-hidden="true">
+          <svg width="100%" height="100%" viewBox="0 0 800 520" preserveAspectRatio="xMidYMid slice">
             <defs>
               <linearGradient id="g1" x1="0" x2="1">
                 <stop offset="0%" stop-color="#fff"/>
@@ -97,13 +97,13 @@
   </section>
 
   <!-- 오늘의 인기 레시피 -->
-  <section class="section">
+  <section class="section" id="recipes">
     <div class="container">
       <h2>오늘의 인기 레시피</h2>
       <p class="muted">많이 저장된 레시피를 모았어요.</p>
 
       <div class="grid">
-        <!-- 카드 6개: <img>로 직접 넣고 cover로 꽉 채움 -->
+        <!-- 카드 6개 -->
         <article class="card">
           <div class="thumb" aria-label="크림 토마토 파스타 썸네일">
             <img loading="lazy" decoding="async"
@@ -212,52 +212,76 @@
   </section>
 
   <!-- 커뮤니티 하이라이트 -->
-  <section class="section">
-    <div class="container">
-      <h2>커뮤니티 하이라이트</h2>
-      <div class="community">
-        <div>
-          <h3 style="margin:2px 0 8px">이번 주 요리 챌린지 🍳</h3>
-          <p class="muted">“토마토로 만드는 3가지 요리” — 사진 올리고 배지를 받아보세요.</p>
-          <button class="btn">챌린지 참가</button>
+<section class="section" id="community">
+  <div class="container">
+    <h2>커뮤니티 하이라이트</h2>
+    <div class="community">
+      <div>
+        <h3 style="margin:2px 0 8px">이번 주 요리 챌린지 🍳</h3>
+        <p class="muted">“토마토로 만드는 3가지 요리” — 사진 올리고 배지를 받아보세요.</p>
+        <button class="btn">챌린지 참가</button>
+      </div>
+
+      <!-- ▶ 슬라이더로 변경 -->
+      <div class="slider" data-slider aria-label="커뮤니티 레시피 슬라이더">
+        <button class="slider-btn prev" aria-label="이전 레시피" data-prev>&larr;</button>
+
+        <div class="slider-viewport" tabindex="0">
+          <div class="slider-track" data-track>
+            <!-- 각 썸네일을 slide로 감쌈 -->
+            <div class="slide">
+              <div class="thumb sm">
+                <img loading="lazy" decoding="async"
+                  src="https://recipe1.ezmember.co.kr/cache/recipe/2019/02/09/9377ac695a85566adfda9817b73438f31.jpg"
+                  alt="갈비찜" />
+              </div>
+            </div>
+            <div class="slide">
+              <div class="thumb sm">
+                <img loading="lazy" decoding="async"
+                  src="https://recipe1.ezmember.co.kr/cache/recipe/2018/08/06/recipe20180806e7e04cf2861ce66ca89f2086b3d10d0b_f.jpg"
+                  alt="브루스케타" />
+              </div>
+            </div>
+            <div class="slide">
+              <div class="thumb sm">
+                <img loading="lazy" decoding="async"
+                  src="https://recipe1.ezmember.co.kr/cache/recipe/2020/02/22/4554f03378f8a997d9a54285322001971.jpg"
+                  alt="아보카도 샐러드" />
+              </div>
+            </div>
+            <div class="slide">
+              <div class="thumb sm">
+                <img loading="lazy" decoding="async"
+                  src="https://recipe1.ezmember.co.kr/cache/recipe/2015/11/01/eb3981d22f5ba05a62e02d5e340c9e031.jpg"
+                  alt="치킨 커틀릿" />
+              </div>
+            </div>
+            <div class="slide">
+              <div class="thumb sm">
+                <img loading="lazy" decoding="async"
+                  src="https://img.freepik.com/free-photo/delicious-cream-dessert-with-coconut-truffles-strawberries-wooden-round-serving-board_181624-60551.jpg?semt=ais_hybrid&w=740&q=80"
+                  alt="딸기 파르페" />
+              </div>
+            </div>
+            <div class="slide">
+              <div class="thumb sm">
+                <img loading="lazy" decoding="async"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjH5TNCaLgTkzl1cRcBdo-zpsJXENQcAIA_Q&s"
+                  alt="크림 토마토 파스타" />
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- 여기도 칸 꽉 채우는 썸네일들 -->
-        <div class="thumbs">
-          <div class="thumb sm">
-            <img loading="lazy" decoding="async"
-              src="https://recipe1.ezmember.co.kr/cache/recipe/2019/02/09/9377ac695a85566adfda9817b73438f31.jpg"
-              alt="갈비찜" />
-          </div>
-          <div class="thumb sm">
-            <img loading="lazy" decoding="async"
-              src="https://recipe1.ezmember.co.kr/cache/recipe/2018/08/06/recipe20180806e7e04cf2861ce66ca89f2086b3d10d0b_f.jpg"
-              alt="브루스케타" />
-          </div>
-          <div class="thumb sm">
-            <img loading="lazy" decoding="async"
-              src="https://recipe1.ezmember.co.kr/cache/recipe/2020/02/22/4554f03378f8a997d9a54285322001971.jpg"
-              alt="아보카도 샐러드" />
-          </div>
-          <div class="thumb sm">
-            <img loading="lazy" decoding="async"
-              src="https://recipe1.ezmember.co.kr/cache/recipe/2015/11/01/eb3981d22f5ba05a62e02d5e340c9e031.jpg"
-              alt="치킨 커틀릿" />
-          </div>
-          <div class="thumb sm">
-            <img loading="lazy" decoding="async"
-              src="https://img.freepik.com/free-photo/delicious-cream-dessert-with-coconut-truffles-strawberries-wooden-round-serving-board_181624-60551.jpg?semt=ais_hybrid&w=740&q=80"
-              alt="딸기 파르페" />
-          </div>
-          <div class="thumb sm">
-            <img loading="lazy" decoding="async"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjH5TNCaLgTkzl1cRcBdo-zpsJXENQcAIA_Q&s"
-              alt="크림 토마토 파스타" />
-          </div>
-        </div>
+        <button class="slider-btn next" aria-label="다음 레시피" data-next>&rarr;</button>
+
+        <!-- 페이지 도트(선택) -->
+        <div class="slider-dots" aria-hidden="true" data-dots></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
